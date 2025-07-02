@@ -18,7 +18,7 @@ function logAndThrow(errorMessage: string): never {
 
 // any = JavaScript
 // unknown
-function process(val: unknown) {
+function processValue(val: unknown) {
   if (
     typeof val === "object" &&
     !!val &&
