@@ -26,7 +26,7 @@ class AdvanceUser {
   }
 }
 
-const john = new AdvanceUser(); // TODO: Create an instance of AdvanceUser
+const john = new AdvanceUser();
 john.firstName = "John";
 john.lastName = "Doe";
 console.log(john.fullName); // John Doe
@@ -67,5 +67,22 @@ abstract class UIElement {
     console.log(
       `Cloning element with ID ${this.identifier} to ${targetLocation}`
     );
+  }
+}
+
+class SideDrawerElement extends UIElement {
+  constructor(
+    public identifier: string,
+    public position: "left" | "right" = "left"
+  ) {
+    super(identifier);
+  }
+
+  open(): void {
+    console.log(`Opening side drawer with ID ${this.identifier}`);
+  }
+
+  close(): void {
+    console.log(`Closing side drawer with ID ${this.identifier}`);
   }
 }
