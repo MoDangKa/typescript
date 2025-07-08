@@ -17,3 +17,10 @@ const gAdmin = new GAdmin(["ban", "restore"]);
 
 type Entity = GUser | GAdmin;
 
+function init(entity: Entity) {
+  if (entity instanceof GUser) {
+    entity.join();
+  } else if (entity instanceof GAdmin) {
+    entity.scan();
+  }
+}
